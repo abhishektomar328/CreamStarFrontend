@@ -1,0 +1,17 @@
+<div class="services-container">
+    <div class="service-card" *ngFor="let service of services; let i = index">
+      <h3>{{ service.name }}</h3>
+  
+      <!-- Image Upload Button -->
+      <input type="file" (change)="uploadImage($event, i)" accept="image/*" />
+  
+      <!-- Images Section -->
+      <div class="images-container">
+        <div class="image-box" *ngFor="let img of service.images">
+          <img [src]="img.url" alt="Service Image" />
+          <button class="delete-btn" (click)="removeImage(i, img.id)">X</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
+    overflow-x: hidden;
+  }
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('/assets/home.jpg');
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+  
+    .overlay {
+      background: rgba(0, 0, 0, 0.6);
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .hero-content {
+      max-width: 80%;
+      padding: 20px;
+  
+      h1 {
+        font-size: 2.8rem;
+        margin-bottom: 15px;
+        font-weight: bold;
+      }
+  
+      .cta-button {
+        background: #ff9900;
+        color: white;
+        padding: 12px 24px;
+        font-size: 1.2rem;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+  
+      .cta-button:hover {
+        background: #cc7a00;
+      }
+  
+      .intro {
+        margin-top: 15px;
+        font-size: 1.1rem;
+      }
+    }
+  }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeInUp 1s ease-in-out forwards;
+}
+
+.delay-1 {
+  animation-delay: 0.5s;
+}
+
+.delay-2 {
+  animation-delay: 1s;
+}
+
+
+
+.logo {
+  width: 600px; 
+  height: auto;
+  display: block;
+  margin: 0 auto 20px; 
+  background:transparent;
+  border: none; 
+  mix-blend-mode:exclusion;
+
+}
+
+
+
+  
+  @media (max-width: 768px) {
+    .hero-content {
+      h1 {
+        font-size: 2rem;
+      }
+      .cta-button {
+        font-size: 1rem;
+        padding: 10px 20px;
+      }
+      .intro {
+        font-size: 1rem;
+      }
+    }
+  }
+  

@@ -1,0 +1,37 @@
+<!-- Sidebar -->
+<div class="sidebar" [ngClass]="{ 'open': sidebarOpen }">
+  <button class="close-btn" (click)="toggleSidebar()">×</button>
+  <ul>
+    <li><a routerLink="/about" (click)="toggleSidebar()">About Us</a></li>
+    <li><a routerLink="/services"(click)="toggleSidebar()">Services</a></li>
+
+    <!-- <li><a href="#services" (click)="toggleSidebar()">Services</a></li> -->
+    <li><a href="#gallery" (click)="toggleSidebar()">Gallery</a></li>
+    <li><a href="#contact" (click)="toggleSidebar()">Contact Us</a></li>
+    <li><a href="#blogs" (click)="toggleSidebar()">Blogs</a></li>
+    <li><a href="#Admin" (click)="toggleSidebar('admin')">Admin</a></li>
+
+  </ul>
+
+</div>
+
+<!-- Sidebar Backdrop -->
+<div class="sidebar-backdrop" (click)="toggleSidebar()" *ngIf="sidebarOpen"></div>
+
+<!-- Menu Button -->
+<button class="menu-btn" (click)="toggleSidebar()" *ngIf="!sidebarOpen">☰</button>
+
+<ng-template #adminDialog>
+  <h2 mat-dialog-title>Admin Form</h2>
+  <div mat-dialog-content>
+    <form>
+      <label for="input1">Input 1:</label>
+      <input matInput type="text" id="input1" required />
+
+      <label for="input2">Input 2:</label>
+      <input matInput type="text" id="input2" required />
+
+      <button mat-button type="submit">Submit</button>
+    </form>
+  </div>
+</ng-template>
