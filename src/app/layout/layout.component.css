@@ -13,7 +13,7 @@
     position: relative;
     width: 100%;
     height: 100vh;
-    background: url('/assets/home.jpg');
+    /* background: url('/assets/home.jpg'); */
     background-size: cover;
     display: flex;
     align-items: center;
@@ -89,15 +89,17 @@
 
 
 
-/* .logo {
+.logo {
   width: 600px; 
   height: auto;
   display: block;
   margin: 0 auto 20px; 
   background:transparent;
   border: none; 
-  mix-blend-mode:exclusion;
-} */
+  border-radius: 50%;
+  /* mix-blend-mode:exclusion; */
+
+}
 
 
 

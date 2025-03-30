@@ -4,6 +4,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { AboutComponent } from './about/about.component';
 import { ServicesComponent } from './services/services.component';
 import { LoginComponent } from './login/login.component';
+import { LayoutComponent } from './layout/layout.component';
 
 export const routes: Routes = [
     // { path: '', component: HomeComponent },
@@ -15,9 +16,11 @@ export const routes: Routes = [
         component: HomeComponent,  // Use HomeComponent as the parent layout
         children: [
             {path:'login',component:LoginComponent},
+            {path:'layout',component:LayoutComponent},
+
             { path: 'about', component: AboutComponent },  // About route
             { path: 'services', component: ServicesComponent },  // Services route
-            { path: '', redirectTo: '/about', pathMatch: 'full' },  // Default route to About
+            { path: '', redirectTo: '/layout', pathMatch: 'full' },  // Default route to About
         ]
     }
 
