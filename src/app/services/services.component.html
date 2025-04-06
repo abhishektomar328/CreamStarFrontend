@@ -1,17 +1,99 @@
-<div class="services-container">
-    <div class="service-card" *ngFor="let service of services; let i = index">
-      <h3>{{ service.name }}</h3>
-  
-      <!-- Image Upload Button -->
-      <input type="file" (change)="uploadImage($event, i)" accept="image/*" />
-  
-      <!-- Images Section -->
-      <div class="images-container">
-        <div class="image-box" *ngFor="let img of service.images">
-          <img [src]="img.url" alt="Service Image" />
-          <button class="delete-btn" (click)="removeImage(i, img.id)">X</button>
-        </div>
-      </div>
+<div class="event-container">
+  <!-- <section class="event-section" id="orchestra-musical-nights">
+    <h2 style="text-align: left;">Orchestra & Musical Nights</h2>
+    <p style="text-align: left;">Experience mesmerizing musical performances and orchestras for your special events.</p>
+    <div class="image-gallery">
+      <img *ngFor="let image of Om" [src]="image?.secure_url" alt="Flower Decoration Image">
     </div>
-  </div>
+  </section> -->
+  <section class="event-section" id="orchestra-musical-nights">
+    <div class="event-content">
+      <div class="text-content">
+        <h2>Orchestra & Musical Nights</h2>
+        <p>Experience mesmerizing musical performances and orchestras for your special events.</p>
+      </div>
+      <button class="event-btn">Book Now</button>
+    </div>
+    <div class="image-gallery">
+      <img *ngFor="let image of Om" [src]="image?.secure_url" alt="Flower Decoration Image">
+    </div>
+  </section>
   
+
+  <section class="event-section" id="jagran-mata-ki-chowki">
+    <div class="event-content">
+      <div class="text-content">
+        <h2>Jagran and Mata Ki Chowki</h2>
+        <p>Spiritual gatherings to bring peace and blessings to your occasion.</p>
+      </div>
+      <button class="event-btn">Book Now</button>
+
+    </div>
+    
+    <div class="image-gallery">
+      <img *ngFor="let image of Jm" [src]="image?.secure_url" alt="Flower Decoration Image">
+    </div>
+  </section>
+
+  <section class="event-section" id="light-sound-system">
+    <div class="event-content">
+      <div class="text-content">
+        <h2>Light and Sound System</h2>
+        <p>State-of-the-art light and sound systems to enhance your event experience.</p>
+      </div>
+      <button class="event-btn">Book Now</button>
+
+    </div>
+
+    <div class="image-gallery">
+      <img *ngFor="let image of Ls" [src]="image?.secure_url" alt="Flower Decoration Image">
+    </div>
+  </section>
+
+  <section class="event-section" id="varmala-themes">
+    <div class="event-content">
+      <div class="text-content">
+        <h2>Varmala Themes</h2>
+        <p>Unique varmala themes to make your wedding unforgettable.</p>
+      </div>
+      <button class="event-btn">Book Now</button>
+
+    </div>
+    
+    <div class="image-gallery">
+      <img *ngFor="let image of Vt" [src]="image?.secure_url" alt="Flower Decoration Image">
+    </div>
+  </section>
+
+  <section class="event-section" id="dance-troupes">
+    <h2>Dance Troupes</h2>
+    <p>Professional dance troupes to add entertainment and energy to your event.</p>
+    <div class="image-gallery">
+      <img *ngFor="let image of Dt" [src]="image?.secure_url" alt="Dance Troupes Image">
+    </div>
+  </section>
+
+  <section class="event-section" id="flower-decoration">
+    <h2>Flower Decoration</h2>
+    <p>Beautiful floral arrangements to adorn your venue.</p>
+    <div class="image-gallery">
+      <img *ngFor="let image of Fd" [src]="image?.secure_url" alt="Flower Decoration Image">
+    </div>
+  </section>
+
+  <section class="event-section" id="wedding-corporate-events">
+    <h2>Wedding Planning & Corporate Events</h2>
+    <p>Comprehensive planning services for weddings and corporate events.</p>
+    <div class="image-gallery">
+      <img *ngFor="let image of Wp" [src]="image?.secure_url" alt="Flower Decoration Image">
+    </div>
+  </section>
+
+  <section class="event-section" id="school-birthday-parties">
+    <h2>School & Birthday Parties</h2>
+    <p>Fun-filled parties tailored for schools and birthdays.</p>
+    <div class="image-gallery">
+      <img *ngFor="let image of Sb" [src]="image?.secure_url" alt="Flower Decoration Image">
+    </div>
+  </section>
+</div>
