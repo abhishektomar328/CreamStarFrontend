@@ -13,6 +13,8 @@ import { Observable } from 'rxjs'; // For using Observables
 export class ServicesComponent {
   dtId:any = '67e6d0459eec4cf56e4a3d26';
   fdId:any = '67e6d0d49eec4cf56e4a3d2a';
+  SbpId:any= '67f149a21d70d1970f15cf62';
+  VtId:any = '67f1f8bc8524798b34e0c1be';
   Om:any=[]
   Jm:any=[]
   Ls:any=[]
@@ -35,12 +37,21 @@ export class ServicesComponent {
         console.log(data.categories);
         data.categories.forEach((category: any) => {
           if (category._id === this.dtId) {
-            this.Dt = category.images; // Store Dance Troupes images
+            this.Dt = category.images;
             console.log("Dance Troupes Images:", this.Dt);
           } else if (category._id === this.fdId) {
-            this.Fd = category.images; // Store Flower Decoration images
+            this.Fd = category.images;
             console.log("Flower Decoration Images:", this.Fd);
           }
+          else if (category._id === this.SbpId) {
+            this.Sb = category.images;
+            console.log("School birthday parties:", this.Sb);
+          }
+          else if (category._id === this.VtId) {
+            this.Vt = category.images; 
+            console.log("Varmala themes:", this.Vt);
+          }
+          
         });
       },
       error: (error: any) => {
