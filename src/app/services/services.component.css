@@ -1,67 +1,17 @@
-/* 
-.event-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; 
-  padding: 20px;
-}
-
-.event-section {
-  flex: 1 1 calc(60% - 20px); 
-  margin: 10px;
-  padding: 15px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-}
-
-.event-section h2 {
-  color: #4CAF50;
-}
-
-.event-section p {
-  color: #555;
-}
-
-@media (max-width: 768px) {
-  .event-section {
-    flex: 1 1 calc(90% - 20px); 
-    margin: auto; 
-  }
-}
-
-@media (max-width: 480px) {
-  .event-section {
-    flex: 1 1 calc(100% - 20px); 
-    margin: auto; 
-  }
-}
-
-.image-gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.image-gallery img {
-  width: 150px; 
-  height: auto; 
-  object-fit: cover; 
-} */
-
-
-
-
 .event-container {
   display: flex;
   flex-direction: column;
   justify-content: space-between; 
   height:100vh;
   width:80vw;
-  /* background-color: green; */
+  /* overflow-y: auto; */
+  overflow-y: scroll; /* Allows scrolling, but hides the scrollbar */
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none; /* For Internet Explorer 10+ */
 }
-
-
+.event-container::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Opera */
+}
 .event-section {
   margin: 10px;
   padding: 15px;
@@ -70,48 +20,114 @@
   box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
 }
 .event-section h2 {
-  color: #4CAF50;
+  /* color: #4CAF50; */
+  color:orange
 }
 .event-section p {
-  color: #555;
-}
-.image-gallery {
-  display: flex;
-  height:600px;
-  width:1485px;
-  gap: 10px;
-  overflow: auto;
-}
+  /* color: #555; */
+    color: #4CAF50;
 
-.image-gallery img {
-  height:100%;
-  width: 100%; 
-} 
-
+}
 .event-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
 }
-
 .text-content {
   display: flex;
   flex-direction: column;
   text-align: left;
 }
-
 .event-btn {
-  background-color: #ff5733; /* Button color */
+  background-color: #ff5733;
   color: white;
   padding: 10px 20px;
   border: none;
   cursor: pointer;
   font-size: 16px;
   border-radius: 5px;
+} 
+ .event-btn:hover {
+  background-color: #e04e2b;
+}
+.image-gallery {
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+  background-color: transparent;
+  position: relative;
+  width: 100%;
 }
 
-.event-btn:hover {
-  background-color: #e04e2b;
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1350px;
+  aspect-ratio: 16 / 9; /* Enforces 16:9 aspect ratio */
+  overflow: hidden;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+
+.main-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Fills container, maintains aspect ratio, crops if needed */
+  border-radius: 8px;
+  transition: transform 0.6s ease, box-shadow 0.3s ease;
+}
+
+.main-image:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.4);
+  border: none;
+  border-radius: 50%;
+  padding: 12px;
+  cursor: pointer;
+  z-index: 2;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-btn:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.nav-btn.left {
+  left: 10px;
+}
+
+.nav-btn.right {
+  right: 10px;
+}
+
+.nav-btn mat-icon {
+  font-size: 25px;
+  color: #fff;
+}
+
+.delete-icon {
+  margin-top: 10px;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.delete-icon:hover {
+  color: #cc0000;
 }
 

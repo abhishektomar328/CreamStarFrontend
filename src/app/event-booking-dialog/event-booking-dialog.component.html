@@ -1,0 +1,67 @@
+<!-- <h1 mat-dialog-title>Book Your Event</h1>
+<div mat-dialog-content>
+  <p>Fill out the details to book your event.</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Close</button>
+  <button mat-button>Confirm</button>
+</div> -->
+
+<!-- <h1 mat-dialog-title>Book Your Event</h1> -->
+<!-- <div mat-dialog-content>
+  <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Category Name</mat-label>
+      <input matInput formControlName="categoryName" readonly>
+    </mat-form-field>
+
+    <div class="file-upload-section">
+      <button mat-raised-button color="primary" type="button" (click)="fileInput.click()">
+        <mat-icon>upload</mat-icon> Select Images
+      </button>
+      <input type="file" #fileInput multiple (change)="onFileSelected($event)" accept="image/*" hidden>
+
+      <div class="selected-files" *ngIf="selectedFiles.length() > 0">
+        <p *ngFor="let file of selectedFiles">{{ file.name }} ({{ file.size}})</p>
+      </div>
+    </div>
+
+    <div mat-dialog-actions>
+      <button mat-button mat-dialog-close>Close</button>
+      <button mat-raised-button color="primary" type="submit" [disabled]="!bookingForm.valid">
+        Confirm
+      </button>
+    </div>
+  </form>
+</div> -->
+
+
+<div mat-dialog-content>
+  <!-- Category Name Display -->
+  <div class="category-name">
+    <h2>{{ bookingForm.get('categoryName')?.value }}</h2>
+  </div>
+
+  <!-- File Upload Section -->
+  <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()">
+    <div class="file-upload-section">
+      <button mat-raised-button color="primary" type="button" (click)="fileInput.click()">
+        <mat-icon>upload</mat-icon> Select Images
+      </button>
+      <input type="file" #fileInput multiple (change)="onFileSelected($event)" accept="image/*" hidden>
+
+      <!-- Display Selected Files -->
+      <div class="selected-files" *ngIf="selectedFiles.length > 0">
+        <p *ngFor="let file of selectedFiles">{{ file.name }} ({{ file.size }} bytes)</p>
+      </div>
+    </div>
+
+    <!-- Form Actions -->
+    <div class="form-actions">
+      <button mat-button mat-dialog-close>Close</button>
+      <button mat-raised-button color="primary" type="submit" [disabled]="!bookingForm.valid">
+        Confirm
+      </button>
+    </div>
+  </form>
+</div>

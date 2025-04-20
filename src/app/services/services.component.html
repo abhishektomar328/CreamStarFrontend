@@ -1,129 +1,219 @@
 <div class="event-container">
-  <!-- <section class="event-section" id="orchestra-musical-nights">
-    <h2 style="text-align: left;">Orchestra & Musical Nights</h2>
-    <p style="text-align: left;">Experience mesmerizing musical performances and orchestras for your special events.</p>
-    <div class="image-gallery">
-      <img *ngFor="let image of Om" [src]="image?.secure_url" alt="Flower Decoration Image">
-    </div>
-  </section> -->
   <section class="event-section" id="orchestra-musical-nights">
     <div class="event-content">
       <div class="text-content">
         <h2>Orchestra & Musical Nights</h2>
         <p>Experience mesmerizing musical performances and orchestras for your special events.</p>
       </div>
-      <button class="event-btn">Book Now</button>
+      <button class="event-btn" *ngIf="authService.token()"  (click)="openBookingDialog('Orchestra & Musical Nights')">Book Now</button>
     </div>
-    <div class="image-gallery">
-      <img *ngFor="let image of Om" [src]="image?.secure_url" alt="Flower Decoration Image">
+  
+    <div class="image-gallery" *ngIf="Om?.length">
+      <div class="image-wrapper">
+        <button class="nav-btn left" (click)="prevImage('Om')" [disabled]="currentIndexes['Om'] === 0">
+          <mat-icon>chevron_left</mat-icon>
+        </button>
+  
+        <img class="main-image" [src]="Om[currentIndexes['Om']]?.secure_url" alt="Orchestra Image" />
+  
+        <button class="nav-btn right"  (click)="nextImage('Om', Om)" [disabled]="currentIndexes['Om'] === Om.length - 1">
+          <mat-icon>chevron_right</mat-icon>
+        </button>
+  
+        
+      </div>
+      <mat-icon class="delete-icon" *ngIf="authService.token()"
+          (click)="deleteImageByCategory('67f21c7110e8ae8cc6a0eb2f', Om[currentIndexes['Om']]?.public_id)">delete</mat-icon>
     </div>
   </section>
-  
-
   <section class="event-section" id="jagran-mata-ki-chowki">
     <div class="event-content">
       <div class="text-content">
         <h2>Jagran and Mata Ki Chowki</h2>
         <p>Spiritual gatherings to bring peace and blessings to your occasion.</p>
       </div>
-      <button class="event-btn">Book Now</button>
-
+      <button class="event-btn"    *ngIf="authService.token()"  
+      (click)="openBookingDialog('Jagran and Mata Ki Chowki')">Book Now</button>
     </div>
-    
-    <div class="image-gallery">
-      <img *ngFor="let image of Jm" [src]="image?.secure_url" alt="Flower Decoration Image">
+  
+    <div class="image-gallery" *ngIf="Jm?.length">
+      <div class="image-wrapper">
+        <button class="nav-btn left" (click)="prevImage('Jm')" [disabled]="currentIndexes['Jm'] === 0">
+          <mat-icon>chevron_left</mat-icon>
+        </button>
+  
+        <img class="main-image" [src]="Jm[currentIndexes['Jm']]?.secure_url" alt="Jagran Image" />
+  
+        <button class="nav-btn right" (click)="nextImage('Jm', Jm)" [disabled]="currentIndexes['Jm'] === Jm.length - 1">
+          <mat-icon>chevron_right</mat-icon>
+        </button>
+  
+
+      </div>
+      <mat-icon class="delete-icon" *ngIf="authService.token()"
+      (click)="deleteImageByCategory('67f3334bb2bf66c04c43bb89', Jm[currentIndexes['Jm']]?.public_id)">delete</mat-icon>
     </div>
   </section>
-
   <section class="event-section" id="light-sound-system">
     <div class="event-content">
       <div class="text-content">
         <h2>Light and Sound System</h2>
         <p>State-of-the-art light and sound systems to enhance your event experience.</p>
       </div>
-      <button class="event-btn">Book Now</button>
-
+      <button class="event-btn" *ngIf="authService.token()" (click)="openBookingDialog('Light and Sound System')">Book Now</button>
     </div>
-
-    <div class="image-gallery">
-      <img *ngFor="let image of Ls" [src]="image?.secure_url" alt="Flower Decoration Image">
+  
+    <div class="image-gallery" *ngIf="Ls?.length">
+      <div class="image-wrapper">
+        <button class="nav-btn left" (click)="prevImage('Ls')" [disabled]="currentIndexes['Ls'] === 0">
+          <mat-icon>chevron_left</mat-icon>
+        </button>
+  
+        <img class="main-image" [src]="Ls[currentIndexes['Ls']]?.secure_url" alt="Light and Sound Image" />
+  
+        <button class="nav-btn right" (click)="nextImage('Ls', Ls)" [disabled]="currentIndexes['Ls'] === Ls.length - 1">
+          <mat-icon>chevron_right</mat-icon>
+        </button>
+  
+     
+      </div>
+      <mat-icon class="delete-icon" *ngIf="authService.token()"
+      (click)="deleteImageByCategory('67f34d72b2bf66c04c43bbed', Ls[currentIndexes['Ls']]?.public_id)">delete</mat-icon>
     </div>
   </section>
-
   <section class="event-section" id="varmala-themes">
     <div class="event-content">
       <div class="text-content">
         <h2>Varmala Themes</h2>
         <p>Unique varmala themes to make your wedding unforgettable.</p>
       </div>
-      <button class="event-btn">Book Now</button>
-
+      <button class="event-btn" *ngIf="authService.token()" (click)="openBookingDialog('Varmala Themes')">Book Now</button>
     </div>
-    
-    <div class="image-gallery">
-      <img *ngFor="let image of Vt" [src]="image?.secure_url" alt="Flower Decoration Image">
+  
+    <div class="image-gallery" *ngIf="Vt?.length">
+      <div class="image-wrapper">
+        <button class="nav-btn left" (click)="prevImage('Vt')" [disabled]="currentIndexes['Vt'] === 0">
+          <mat-icon>chevron_left</mat-icon>
+        </button>
+  
+        <img class="main-image" [src]="Vt[currentIndexes['Vt']]?.secure_url" alt="Varmala Theme Image" />
+  
+        <button class="nav-btn right" (click)="nextImage('Vt', Vt)" [disabled]="currentIndexes['Vt'] === Vt.length - 1">
+          <mat-icon>chevron_right</mat-icon>
+        </button>
+  
+
+      </div>
+      <mat-icon class="delete-icon" *ngIf="authService.token()"
+      (click)="deleteImageByCategory('67f1f8bc8524798b34e0c1be', Vt[currentIndexes['Vt']]?.public_id)">delete</mat-icon>
     </div>
   </section>
-
   <section class="event-section" id="dance-troupes">
     <div class="event-content">
       <div class="text-content">
         <h2>Dance Troupes</h2>
         <p>Professional dance troupes to add entertainment and energy to your event.</p>
-        
       </div>
-      <button class="event-btn">Book Now</button>
-
+      <button class="event-btn" *ngIf="authService.token()" (click)="openBookingDialog('Dance Troupes')">Book Now</button>
     </div>
-    
-    <div class="image-gallery">
-      <img *ngFor="let image of Dt" [src]="image?.secure_url" alt="Dance Troupes Image">
+  
+    <div class="image-gallery" *ngIf="Dt?.length">
+      <div class="image-wrapper">
+        <button class="nav-btn left" (click)="prevImage('Dt')" [disabled]="currentIndexes['Dt'] === 0">
+          <mat-icon>chevron_left</mat-icon>
+        </button>
+  
+        <img class="main-image" [src]="Dt[currentIndexes['Dt']]?.secure_url" alt="Dance Troupes Image" />
+  
+        <button class="nav-btn right" (click)="nextImage('Dt', Dt)" [disabled]="currentIndexes['Dt'] === Dt.length - 1">
+          <mat-icon>chevron_right</mat-icon>
+        </button>
+  
+
+      </div>
+      <mat-icon class="delete-icon" *ngIf="authService.token()"
+      (click)="deleteImageByCategory('67e6d0459eec4cf56e4a3d26', Dt[currentIndexes['Dt']]?.public_id)">delete</mat-icon>
     </div>
   </section>
-
   <section class="event-section" id="flower-decoration">
     <div class="event-content">
       <div class="text-content">
         <h2>Flower Decoration</h2>
-    <p>Beautiful floral arrangements to adorn your venue.</p>
+        <p>Beautiful floral arrangements to adorn your venue.</p>
       </div>
-      <button class="event-btn">Book Now</button>
-
-      
+      <button class="event-btn" *ngIf="authService.token()" (click)="openBookingDialog('Flower Decoration')">Book Now</button>
     </div>
-    
-    <div class="image-gallery">
-      <img *ngFor="let image of Fd" [src]="image?.secure_url" alt="Flower Decoration Image">
+  
+    <div class="image-gallery" *ngIf="Fd?.length">
+      <div class="image-wrapper">
+        <button class="nav-btn left" (click)="prevImage('Fd')" [disabled]="currentIndexes['Fd'] === 0">
+          <mat-icon>chevron_left</mat-icon>
+        </button>
+  
+        <img class="main-image" [src]="Fd[currentIndexes['Fd']]?.secure_url" alt="Flower Decoration Image" />
+  
+        <button class="nav-btn right" (click)="nextImage('Fd', Fd)" [disabled]="currentIndexes['Fd'] === Fd.length - 1">
+          <mat-icon>chevron_right</mat-icon>
+        </button>
+  
+
+      </div>
+      <mat-icon class="delete-icon" *ngIf="authService.token()"
+      (click)="deleteImageByCategory('67e6d0d49eec4cf56e4a3d2a', Fd[currentIndexes['Fd']]?.public_id)">delete</mat-icon>
     </div>
   </section>
-
   <section class="event-section" id="wedding-corporate-events">
     <div class="event-content">
       <div class="text-content">
         <h2>Wedding Planning & Corporate Events</h2>
-    <p>Comprehensive planning services for weddings and corporate events.</p>
+        <p>Comprehensive planning services for weddings and corporate events.</p>
       </div>
-      <button class="event-btn">Book Now</button>
-
+      <button class="event-btn" *ngIf="authService.token()" (click)="openBookingDialog('Wedding Planning & Corporate Events')">Book Now</button>
     </div>
-    
-    <div class="image-gallery">
-      <img *ngFor="let image of Wp" [src]="image?.secure_url" alt="Flower Decoration Image">
+  
+    <div class="image-gallery" *ngIf="Wp?.length">
+      <div class="image-wrapper">
+        <button class="nav-btn left" (click)="prevImage('Wp')" [disabled]="currentIndexes['Wp'] === 0">
+          <mat-icon>chevron_left</mat-icon>
+        </button>
+  
+        <img class="main-image" [src]="Wp[currentIndexes['Wp']]?.secure_url" alt="Wedding Planning Image" />
+  
+        <button class="nav-btn right" (click)="nextImage('Wp', Wp)" [disabled]="currentIndexes['Wp'] === Wp.length - 1">
+          <mat-icon>chevron_right</mat-icon>
+        </button>
+  
+
+      </div>
+      <mat-icon class="delete-icon" *ngIf="authService.token()"
+      (click)="deleteImageByCategory('67f34d9ab2bf66c04c43bbf1', Wp[currentIndexes['Wp']]?.public_id)">delete</mat-icon>
     </div>
   </section>
-
   <section class="event-section" id="school-birthday-parties">
     <div class="event-content">
       <div class="text-content">
         <h2>School & Birthday Parties</h2>
-    <p>Fun-filled parties tailored for schools and birthdays.</p>
+        <p>Fun-filled parties tailored for schools and birthdays.</p>
       </div>
-      <button class="event-btn">Book Now</button>
-
+      <button class="event-btn" *ngIf="authService.token()" (click)="openBookingDialog('School & Birthday Parties')">Book Now</button>
     </div>
-    
-    <div class="image-gallery">
-      <img *ngFor="let image of Sb" [src]="image?.secure_url" alt="Flower Decoration Image">
+  
+    <div class="image-gallery" *ngIf="Sb?.length">
+      <div class="image-wrapper">
+        <button class="nav-btn left" (click)="prevImage('Sb')" [disabled]="currentIndexes['Sb'] === 0">
+          <mat-icon>chevron_left</mat-icon>
+        </button>
+  
+        <img class="main-image" [src]="Sb[currentIndexes['Sb']]?.secure_url" alt="School or Birthday Party Image" />
+  
+        <button class="nav-btn right" (click)="nextImage('Sb', Sb)" [disabled]="currentIndexes['Sb'] === Sb.length - 1">
+          <mat-icon>chevron_right</mat-icon>
+        </button>
+  
+
+      </div>
+      <mat-icon class="delete-icon" *ngIf="authService.token()"
+      (click)="deleteImageByCategory('67f149a21d70d1970f15cf62', Sb[currentIndexes['Sb']]?.public_id)">delete</mat-icon>
     </div>
   </section>
 </div>
