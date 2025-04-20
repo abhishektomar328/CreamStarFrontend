@@ -1,3 +1,20 @@
+.overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+  min-height: 100vh;
+  color: white;
+  overflow: auto;
+}
+
+/* Hero Content */
+.hero-content {
+  text-align: center;
+  max-width: 600px;
+  width: 100%;
+}
+
 .logo {
     width: 600px;
     height: auto;
@@ -23,5 +40,22 @@
   }
 
 
+
+  @media (max-width: 768px) {
+    .typewriter {
+      font-size: 1.5rem;
+    }
   
+    .logo {
+      max-width: 300px;
+    }
+  }
   
+  @media (max-width: 480px) {
+    .typewriter {
+      font-size: 1.2rem;
+    }
+    .logo {
+      max-width: 150px;
+    }
+  }
