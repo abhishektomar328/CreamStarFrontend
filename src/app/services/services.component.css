@@ -21,11 +21,15 @@
 }
 .event-section h2 {
   /* color: #4CAF50; */
+ font-style: italic;
   color:orange
 }
 .event-section p {
   /* color: #555; */
-    color: #4CAF50;
+  font-style: italic;
+  color:whitesmoke
+
+
 
 }
 .event-content {

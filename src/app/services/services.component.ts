@@ -105,11 +105,18 @@ export class ServicesComponent {
     });
   }
   openBookingDialog(category:any): void {
-    this.dialog.open(EventBookingDialogComponent, {
+    const dialogRef=this.dialog.open(EventBookingDialogComponent, {
       width: '500px',
       height:'400px', // Optional: Set dialog width
       data:{category},
     });
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        // Only refresh if there was a result (i.e., successful upload)
+        this.getCategories();
+      }
+    });
+    
   }
   deleteImageByCategory(categoryId:any,imagePublicId:any){
     const obj:any = {
