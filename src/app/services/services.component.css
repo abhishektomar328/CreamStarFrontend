@@ -8,6 +8,8 @@
   overflow-y: scroll; /* Allows scrolling, but hides the scrollbar */
   scrollbar-width: none; /* For Firefox */
   -ms-overflow-style: none; /* For Internet Explorer 10+ */
+  margin-bottom:20px;
+
 }
 .event-container::-webkit-scrollbar {
   display: none; /* For Chrome, Safari, and Opera */
@@ -157,6 +159,7 @@
   }
   .event-section {
     margin-top:10px;
+
     padding-left:10px;
     padding-right:10px;
   
