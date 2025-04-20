@@ -14,11 +14,12 @@
 
 import { CommonModule } from '@angular/common';
 import { Component, AfterViewInit } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-layout',
   standalone: true,
-    imports: [CommonModule],
+    imports: [CommonModule,RouterLink],
   templateUrl: './layout.component.html',
   styleUrl: './layout.component.css'
 })
@@ -39,5 +40,20 @@ export class LayoutComponent implements AfterViewInit {
       }
     }
   }
+
+  images: string[] = [
+    '/assets/owner1.jpg',
+    '/assets/award1.jpg',
+    '/assets/owner2.jpg',
+    '/assets/award2.jpg'
+  ];
+  currentIndex = 0;
+  
+  ngOnInit() {
+    setInterval(() => {
+      this.currentIndex = (this.currentIndex + 1) % this.images.length;
+    }, 3000); // change image every 3 seconds
+  }
+  
 }
 

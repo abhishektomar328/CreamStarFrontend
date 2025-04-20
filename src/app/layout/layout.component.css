@@ -1,4 +1,4 @@
-.overlay {
+/* .overlay {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,10 +8,9 @@
   overflow: auto;
 }
 
-/* Hero Content */
 .hero-content {
   text-align: center;
-  max-width: 600px;
+  max-width: 100%;
   width: 100%;
 }
 
@@ -20,28 +19,28 @@
     height: auto;
 }
 
-  .typewriter {
+.typewriter {
     font-size: 2rem;
     white-space: nowrap;
     overflow: hidden;
     border-right: 3px solid #fff;
     width: fit-content;
-    margin: 0 auto;
+    margin: 0 0;
     animation: blink-caret 0.75s step-end infinite;
-  }
+}
   
-  @keyframes blink-caret {
+@keyframes blink-caret {
     from, to {
       border-color: transparent;
     }
     50% {
       border-color: #fff;
     }
-  }
+}
 
 
 
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
     .typewriter {
       font-size: 1.5rem;
     }
@@ -49,13 +48,195 @@
     .logo {
       max-width: 300px;
     }
-  }
+}
   
-  @media (max-width: 480px) {
+@media (max-width: 480px) {
     .typewriter {
       font-size: 1.2rem;
     }
     .logo {
       max-width: 150px;
     }
+} */
+
+
+
+
+
+
+
+
+
+
+.overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+  min-height: 100vh;
+  min-width: 100vw;
+  color: white;
+  overflow-y:auto; 
+}
+
+.hero-content {
+  text-align: center;
+  max-width: 100%;
+  width: 100%;
+}
+.logo {
+  width: 600px;
+  height: auto;
+}
+.typewriter {
+  font-size: 2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid #fff;
+  width: fit-content;
+  margin: 0 auto;
+  animation: blink-caret 0.75s step-end infinite;
+}
+.gradient-text {
+  background: linear-gradient(270deg, #0f0c29, #302b63, #24243e, #000000, #2c3e50);
+  background-size: 800% 800%;
+  background-clip:inherit;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: animatedGradient 10s ease infinite;
+  font-style: oblique;
+}
+
+@keyframes animatedGradient {
+  0% {
+    background-position: 0% 50%;
   }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.subheading {
+  margin-top: 1rem;
+  font-size: 1.8rem;
+  color:yellowgreen;
+  font-style: oblique;
+}
+.cta-button {
+  margin-top: 2rem;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #ff416c, rgb(177, 177, 36));
+  color: black;
+  font-style: oblique;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.cta-button:hover {
+  background: linear-gradient(135deg, #ff4b2b, rgb(350, 251, 67));
+}
+
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #fff;
+  }
+}
+
+@media (max-width: 768px) {
+  .typewriter {
+    font-size: 1.5rem;
+  }
+
+  .logo {
+    max-width: 300px;
+  }
+
+  .subheading {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .typewriter {
+    font-size: 1.2rem;
+  }
+
+  .logo {
+    max-width: 350px;
+  }
+
+  .subheading {
+    font-size: 0.9rem;
+  }
+
+  .cta-button {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+  }
+  .typewriter {
+    font-size: 1rem;
+    white-space:wrap;
+    overflow: hidden;
+    border-right: 3px solid #fff;
+    width: fit-content;
+    margin: 0 auto;
+    animation: blink-caret 0.75s step-end infinite;
+  }
+  /* .gradient-text {
+    background: linear-gradient(270deg, #0f0c29, #302b63, #24243e, #000000, #2c3e50);
+    background-size: 300% 300%;
+    background-clip:inherit;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animatedGradient 10s ease infinite;
+    font-style: oblique;
+  } */
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.social-icons a {
+  font-size: 3rem;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+}
+
+/* Individual icon colors */
+.social-icons a[aria-label="Instagram"] i {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.social-icons a[aria-label="WhatsApp"] i {
+  color: #25D366;
+}
+.phone-link {
+  font-size: 1.5rem;
+  color:whitesmoke;
+  margin-top:5px;
+  text-decoration: none;
+}
+
+
+
+
+
+
